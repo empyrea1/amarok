@@ -6,6 +6,7 @@ Doxyfile
 *.patch
 *.rej
 *.orig
+*.kdev4
 !.gitlab-ci.yml
 !.kde-ci.yml
 

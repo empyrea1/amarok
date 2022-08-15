@@ -199,21 +199,21 @@ if( WITH_PLAYER )
     find_package(X11)
     find_package(Threads REQUIRED)
 
-    find_package(MySQL)
+#    find_package(MySQL)
 
-    if( NOT MySQL_FOUND )
-        find_package(MariaDB REQUIRED)
-    endif()
+#    if( NOT MySQL_FOUND )
+#        find_package(MariaDB REQUIRED)
+#    endif()
 
-    find_package(MySQLe)
-    if( MySQLe_FOUND )
-        set( BUILD_MYSQLE_COLLECTION TRUE )
-        # zlib is required for mysql embedded
-        find_package(ZLIB REQUIRED)
-        set_package_properties( ZLIB PROPERTIES DESCRIPTION "zlib" TYPE REQUIRED )
-    else()
-        add_definitions( "-DNO_MYSQL_EMBEDDED" )
-    endif()
+#    find_package(MySQLe)
+#    if( MySQLe_FOUND )
+#        set( BUILD_MYSQLE_COLLECTION TRUE )
+#        # zlib is required for mysql embedded
+#        find_package(ZLIB REQUIRED)
+#        set_package_properties( ZLIB PROPERTIES DESCRIPTION "zlib" TYPE REQUIRED )
+#    else()
+#        add_definitions( "-DNO_MYSQL_EMBEDDED" )
+#    endif()
 
     # We tell users that we need 1.0.3, but we really check just >= 1.0.0. This is because
     # upstream forgot to update version in lastfm/global.h, so it looks like 1.0.2. :-(
