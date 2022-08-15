@@ -1,7 +1,7 @@
 # Amarok 2.9.71 NO SQL
 
 - Removed annoying Database Error message
-- Commented databases in CMakeLists.txt to not install it
+- Commented database in CMakeLists.txt to not install it
 - Shortcuts for left hand playback control with Z X C V B Space N and more
 
 # Amarok - the audio player for KDE
