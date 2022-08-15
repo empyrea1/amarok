@@ -818,8 +818,8 @@ MainWindow::createActions()
     action = new QAction( QIcon::fromTheme( QStringLiteral("media-seek-forward-amarok") ),
                           i18n( "Seek Forward by %1 seconds", KFormat().formatDecimalDuration( AmarokConfig::seekMedium() * 1000 ) ), this );
     ac->addAction( "seek_forward_medium", action );
-    action->setShortcut( Qt::Key_Right );
-    KGlobalAccel::setGlobalShortcut(action, QKeySequence( Qt::META + Qt::SHIFT + Qt::Key_Plus ) );
+    action->setShortcut( Qt::Key_V );
+    KGlobalAccel::setGlobalShortcut(action, QKeySequence( Qt::META + Qt::SHIFT + Qt::V ) );
     connect( action, &QAction::triggered, this, &MainWindow::slotSeekForwardMedium );
 
     action = new QAction( QIcon::fromTheme( QStringLiteral("media-seek-forward-amarok") ),
@@ -838,8 +838,8 @@ MainWindow::createActions()
     action = new QAction( QIcon::fromTheme( QStringLiteral("media-seek-backward-amarok") ),
                           i18n( "Seek Backward by %1 seconds", KFormat().formatDecimalDuration( AmarokConfig::seekMedium() * 1000 ) ), this );
     ac->addAction( "seek_backward_medium", action );
-    action->setShortcut( Qt::Key_Left );
-    KGlobalAccel::setGlobalShortcut(action, QKeySequence( Qt::META + Qt::SHIFT + Qt::Key_Minus ) );
+    action->setShortcut( Qt::Key_X );
+    KGlobalAccel::setGlobalShortcut(action, QKeySequence( Qt::META + Qt::SHIFT + Qt::Key_X ) );
     connect( action, &QAction::triggered, this, &MainWindow::slotSeekBackwardMedium );
 
     action = new QAction( QIcon::fromTheme( QStringLiteral("media-seek-backward-amarok") ),
