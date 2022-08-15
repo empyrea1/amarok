@@ -509,6 +509,7 @@ App::continueInit()
     PERF_LOG( "App init done" )
 
     // check that the amarok sql configuration is valid.
+<<<<<<< HEAD
     if( !StorageManager::instance()->getLastErrors().isEmpty() )
     {
         QMessageBox::critical( The::mainWindow(), i18n( "Database Error" ),
@@ -523,6 +524,22 @@ App::continueInit()
     {
         handleFirstRun();
     }
+=======
+//     if( !StorageManager::instance()->getLastErrors().isEmpty() )
+//     {
+//         QMessageBox::critical( The::mainWindow(), i18n( "Database Error" ),
+//                  i18n( "The Amarok database reported the following errors:"
+//                  "\n%1\nIn most cases you will need to resolve these errors "
+//                  "before Amarok will run properly.",
+//                  StorageManager::instance()->getLastErrors().join( "\n" ) ) );
+//         StorageManager::instance()->clearLastErrors();
+//         slotConfigAmarok( "DatabaseConfig" );
+//     }
+//     else
+//     {
+//         handleFirstRun();
+//     }
+>>>>>>> 61032b965c (Database Error commented and disabled)
 
     if( AmarokConfig::resumePlayback() && restoreSession && !m_args->isSet( "stop" ) ) {
         //restore session as long as the user didn't specify media to play etc.
