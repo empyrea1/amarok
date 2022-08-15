@@ -1,5 +1,10 @@
-Amarok - the audio player for KDE
-===================================
+# Amarok 2.9.71 NO SQL
+
+- Removed annoying Database Error message
+- Commented databases in CMakeLists.txt to not install it
+- Shortcuts for left hand playback control with Z X C V B Space N and more
+
+# Amarok - the audio player for KDE
 
 There are many media players around these days, it's true. What's missing from most
 players is a user interface that doesn't get in the way of the user. How many
@@ -7,9 +12,7 @@ buttons do you have to press for simply adding some new tracks to the playlist?
 Amarok tries to be a little different, providing a simple drag and drop interface
 that really makes playlist handling easy.
 
-
- FEATURES
-==========
+# FEATURES
 
     * Quick and simple drag and drop playlist creation
     * Music library
@@ -28,19 +31,17 @@ that really makes playlist handling easy.
     * Integration with Plasma and KDE Applications
     * Integration with multiple web sources including Magnatune, Jamendo,
       Ampache, MP3tunes, and others.
---------------------------------------------------------------------------------
 
+---
 
- DEPENDENCIES
-==============
+# DEPENDENCIES
 
 The following list should give you an impression what's required but it might
 not be entirely up to date. You can always look at CMakeLists.txt to discover
 the most recent dependencies.
 
-Required
-    * KDE Frameworks 5.41 (or newer, for an exact list look at CMakeLists.txt)
-      https://www.kde.org
+Required \* KDE Frameworks 5.41 (or newer, for an exact list look at CMakeLists.txt)
+https://www.kde.org
 
     * Phonon 4.6.60 (or newer with support for Qt5) and one of the following backends:
       * phonon-gstreamer 4.6.3 (or newer)
@@ -60,10 +61,10 @@ Required
       Embedded (In-process database support)
 
 Optional
-    * Taglib 1.8 for support of MOD, IT, S3M and XM files
-    * Taglib 1.9 for support of Opus files
-      http://taglib.org/
-      https://github.com/taglib/taglib
+_ Taglib 1.8 for support of MOD, IT, S3M and XM files
+_ Taglib 1.9 for support of Opus files
+http://taglib.org/
+https://github.com/taglib/taglib
 
     * iPod support requires:
       * libgpod 0.8.2 (or newer)
@@ -117,30 +118,23 @@ Optional
 
 Please note that if compiling from source you also need to install -dev/-devel
 versions of these packages, depending on your distribution.
---------------------------------------------------------------------------------
 
+---
 
- IMPORTANT INSTALL INSTRUCTIONS
-================================
+# IMPORTANT INSTALL INSTRUCTIONS
 
 To compile from source, please refer to the INSTALL file.
 
-Packages for popular distributions are available at https://amarok.kde.org
---------------------------------------------------------------------------------
+## Packages for popular distributions are available at https://amarok.kde.org
 
-
- FURTHER RESOURCES
-===================
+# FURTHER RESOURCES
 
 For answers to problems like "Amarok won't play any MP3s!" and "My MP3s skip
 and stutter!" please visit:
 
-   https://amarok.kde.org/
---------------------------------------------------------------------------------
+## https://amarok.kde.org/
 
-
- CONTRIBUTING
-==============
+# CONTRIBUTING
 
 If you wish to contribute to Amarok, you should build it from Git and subscribe
 to the amarok AT kde.org mailing list. The IRC channel is also a place where
@@ -154,8 +148,8 @@ https://community.kde.org/Amarok/Development/Join
 
 See you on IRC!
 
---------------------------------------------------------------------------------
+---
 
-WWW:  https://amarok.kde.org
+WWW: https://amarok.kde.org
 MAIL: amarok@kde.org
-IRC:  irc.libera.chat - #amarok, #amarok-de, #amarok-es, #amarok-fr
+IRC: irc.libera.chat - #amarok, #amarok-de, #amarok-es, #amarok-fr
