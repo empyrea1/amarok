@@ -819,7 +819,7 @@ MainWindow::createActions()
                           i18n( "Seek Forward by %1 seconds", KFormat().formatDecimalDuration( AmarokConfig::seekMedium() * 1000 ) ), this );
     ac->addAction( "seek_forward_medium", action );
     action->setShortcut( Qt::Key_V );
-    KGlobalAccel::setGlobalShortcut(action, QKeySequence( Qt::META + Qt::SHIFT + Qt::Key_V ) );
+    KGlobalAccel::setGlobalShortcut(action, QKeySequence( Qt::META + Qt::ALT + Qt::Key_V ) );
     connect( action, &QAction::triggered, this, &MainWindow::slotSeekForwardMedium );
 
     action = new QAction( QIcon::fromTheme( QStringLiteral("media-seek-forward-amarok") ),
@@ -839,7 +839,7 @@ MainWindow::createActions()
                           i18n( "Seek Backward by %1 seconds", KFormat().formatDecimalDuration( AmarokConfig::seekMedium() * 1000 ) ), this );
     ac->addAction( "seek_backward_medium", action );
     action->setShortcut( Qt::Key_X );
-    KGlobalAccel::setGlobalShortcut(action, QKeySequence( Qt::META + Qt::SHIFT + Qt::Key_X ) );
+    KGlobalAccel::setGlobalShortcut(action, QKeySequence( Qt::META + Qt::ALT + Qt::Key_X ) );
     connect( action, &QAction::triggered, this, &MainWindow::slotSeekBackwardMedium );
 
     action = new QAction( QIcon::fromTheme( QStringLiteral("media-seek-backward-amarok") ),
@@ -862,7 +862,8 @@ MainWindow::createActions()
     ac->addAction( "prev", action );
     action->setIcon( QIcon::fromTheme(QStringLiteral("media-skip-backward-amarok")) );
     action->setText( i18n( "Previous Track" ) );
-    KGlobalAccel::setGlobalShortcut(action, QKeySequence() );
+    action->setShortcut( Qt::Key_Z );
+    KGlobalAccel::setGlobalShortcut(action, QKeySequence( Qt::META + Qt::ALT + Qt::Key_Z ) );
     connect( action, &QAction::triggered, pa, &Playlist::Actions::back );
 
     action = new QAction( this );
@@ -870,7 +871,7 @@ MainWindow::createActions()
     action->setIcon( QIcon::fromTheme(QStringLiteral("media-playback-start")) );
     action->setText( i18n( "Restart current track" ) );
     action->setShortcut( Qt::Key_C );
-    KGlobalAccel::setGlobalShortcut(action, QKeySequence( Qt::META + Qt::SHIFT + Qt::Key_C ) );
+    KGlobalAccel::setGlobalShortcut(action, QKeySequence( Qt::META + Qt::ALT + Qt::Key_C ) );
     connect( action, &QAction::triggered, ec, &EngineController::replay );
 
     action = new QAction( this );
@@ -894,19 +895,20 @@ MainWindow::createActions()
 
     action = new QAction( QIcon::fromTheme(QStringLiteral("media-skip-forward-amarok")), i18n( "Next Track" ), this );
     ac->addAction( "next", action );
-    KGlobalAccel::setGlobalShortcut(action, QKeySequence() );
+    action->setShortcut( Qt::Key_B );
+    KGlobalAccel::setGlobalShortcut(action, QKeySequence( Qt::META + Qt::ALT + Qt::Key_B ) );
     connect( action, &QAction::triggered, pa, &Playlist::Actions::next );
 
     action = new QAction( i18n( "Increase Volume" ), this );
     ac->addAction( "increaseVolume", action );
-    KGlobalAccel::setGlobalShortcut(action, QKeySequence( Qt::META + Qt::Key_Plus ) );
-    action->setShortcut( Qt::Key_Plus );
+    action->setShortcut( Qt::Key_Equal );
+    KGlobalAccel::setGlobalShortcut(action, QKeySequence( ) );
     connect( action, &QAction::triggered, ec, &EngineController::regularIncreaseVolume );
 
     action = new QAction( i18n( "Decrease Volume" ), this );
     ac->addAction( "decreaseVolume", action );
-    KGlobalAccel::setGlobalShortcut(action, QKeySequence( Qt::META + Qt::Key_Minus ) );
     action->setShortcut( Qt::Key_Minus );
+    KGlobalAccel::setGlobalShortcut(action, QKeySequence( ) );
     connect( action, &QAction::triggered, ec, &EngineController::regularDecreaseVolume );
 
     action = new QAction( i18n( "Toggle Main Window" ), this );
@@ -931,6 +933,7 @@ MainWindow::createActions()
 
     action = new QAction( QIcon::fromTheme( "music-amarok" ), i18n("Show active track"), this );
     ac->addAction( "show_active_track", action );
+    action->setShortcut( QKeySequence( Qt::Key_N ) );
     connect( action, &QAction::triggered, this, &MainWindow::slotShowActiveTrack );
 
     action = new QAction( i18n( "Show Notification Popup" ), this );
@@ -950,7 +953,7 @@ MainWindow::createActions()
 
     action = new QAction( i18n( "Last.fm: Ban Current Track" ), this );
     ac->addAction( "banTrack", action );
-    //KGlobalAccel::setGlobalShortcut(action, QKeySequence( Qt::META + Qt::Key_B ) );
+    KGlobalAccel::setGlobalShortcut(action, QKeySequence( ) );
     connect( action, &QAction::triggered, this, &MainWindow::slotBanTrack );
 
     action = new QAction( i18n( "Last.fm: Skip Current Track" ), this );
