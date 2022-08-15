@@ -519,10 +519,10 @@ App::continueInit()
     //     StorageManager::instance()->clearLastErrors();
     //     slotConfigAmarok( "DatabaseConfig" );
     // }
-    else
-    {
-        handleFirstRun();
-    }
+    // else
+    // {
+    //     handleFirstRun();
+    // }
 
     if( AmarokConfig::resumePlayback() && restoreSession && !m_args->isSet( "stop" ) ) {
         //restore session as long as the user didn't specify media to play etc.
