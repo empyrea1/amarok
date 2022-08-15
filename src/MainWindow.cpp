@@ -869,7 +869,8 @@ MainWindow::createActions()
     ac->addAction( "replay", action );
     action->setIcon( QIcon::fromTheme(QStringLiteral("media-playback-start")) );
     action->setText( i18n( "Restart current track" ) );
-    KGlobalAccel::setGlobalShortcut(action, QKeySequence() );
+    action->setShortcut( Qt::Key_C );
+    KGlobalAccel::setGlobalShortcut(action, QKeySequence( Qt::META + Qt::SHIFT + Qt::Key_C ) );
     connect( action, &QAction::triggered, ec, &EngineController::replay );
 
     action = new QAction( this );
