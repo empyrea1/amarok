@@ -853,8 +853,9 @@ MainWindow::createActions()
 
     PERF_LOG( "MainWindow::createActions 6" )
     action = new QAction( QIcon::fromTheme(QStringLiteral("view-refresh")), i18n( "Update Collection" ), this );
-    connect ( action, &QAction::triggered, CollectionManager::instance(), &CollectionManager::checkCollectionChanges );
     ac->addAction( "update_collection", action );
+    action->setShortcut( Qt::ALT + Qt::Key_U );
+    connect ( action, &QAction::triggered, CollectionManager::instance(), &CollectionManager::checkCollectionChanges );
 
     action =  new QAction( QIcon::fromTheme( QStringLiteral("amarok_playcount") ), i18n( "Synchronize Statistics..." ), this );
     ac->addAction( "synchronize_statistics", action );
