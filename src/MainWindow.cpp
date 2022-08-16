@@ -797,8 +797,9 @@ MainWindow::createActions()
     connect( action, &QAction::triggered, The::amarokUrlHandler(), &AmarokUrlHandler::bookmarkCurrentContextView );
 
     action = new QAction( QIcon::fromTheme( QStringLiteral("media-album-cover-manager-amarok") ), i18n( "Cover Manager" ), this );
-    connect( action, &QAction::triggered, this, &MainWindow::slotShowCoverManager );
     ac->addAction( "cover_manager", action );
+    action->setShortcut( Qt::ALT + Qt::Key_C );
+    connect( action, &QAction::triggered, this, &MainWindow::slotShowCoverManager );
 
     action = new QAction( QIcon::fromTheme(QStringLiteral("document-open")), i18n("Play Media..."), this );
     ac->addAction( "playlist_playmedia", action );
