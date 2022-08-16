@@ -785,6 +785,7 @@ MainWindow::createActions()
 
     action = new QAction( QIcon::fromTheme( QStringLiteral("view-media-equalizer") ), i18n( "Equalizer" ), this );
     ac->addAction( "equalizer_dialog", action );
+    action->setShortcut( Qt::ALT + Qt::Key_E );
     connect( action, &QAction::triggered, this, &MainWindow::slotShowEqualizer );
 
     action = new QAction( QIcon::fromTheme( QStringLiteral("bookmark-new") ), i18n( "Bookmark Playlist Setup" ), this );
