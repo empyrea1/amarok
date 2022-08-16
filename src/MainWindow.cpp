@@ -781,6 +781,7 @@ MainWindow::createActions()
 
     action = new QAction( QIcon::fromTheme( QStringLiteral("bookmarks-organize") ), i18n( "Bookmark Manager" ), this );
     ac->addAction( "bookmark_manager", action );
+    action->setShortcut( QKeySequence( Qt::ALT + Qt::Key_B ) );
     connect( action, &QAction::triggered, this, &MainWindow::slotShowBookmarkManager );
 
     action = new QAction( QIcon::fromTheme( QStringLiteral("view-media-equalizer") ), i18n( "Equalizer" ), this );
