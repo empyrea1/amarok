@@ -70,13 +70,13 @@ void BrowserDock::polish()
 
     connect( m_breadcrumbWidget, &BrowserBreadcrumbWidget::toHome, this, &BrowserDock::home );
 
-    // Keyboard shortcut for going back one level
+// Keyboard shortcut for going back one level
     QAction *action = new QAction( QIcon::fromTheme( QStringLiteral("go-up") ), i18n( "Go Up in Media Sources Pane" ),
                                   m_mainWidget );
     Amarok::actionCollection()->addAction( QStringLiteral("browser_previous"), action );
     connect( action, &QAction::triggered, m_categoryList.data(), &BrowserCategoryList::back );
-//    action->setShortcut( QKeySequence( Qt::Key_Backspace ) );
     action->setShortcut( Qt::Key_Backspace );
+//  action->setShortcut( QKeySequence( Qt::Key_Backspace ) );
 
     paletteChanged( palette() );
 
