@@ -75,7 +75,7 @@ void BrowserDock::polish()
                                   m_mainWidget );
     Amarok::actionCollection()->addAction( QStringLiteral("browser_previous"), action );
     connect( action, &QAction::triggered, m_categoryList.data(), &BrowserCategoryList::back );
-    action->setShortcut( Qt::Key_Home );
+    action->setShortcut( Qt::Key_Backspace );
 
     paletteChanged( palette() );
 
