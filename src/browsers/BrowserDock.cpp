@@ -70,7 +70,7 @@ void BrowserDock::polish()
 
     connect( m_breadcrumbWidget, &BrowserBreadcrumbWidget::toHome, this, &BrowserDock::home );
 
-//  Keyboard shortcut for going back to BrowserCategoryList - "Go Up in Media Sources Pane"
+//  Keyboard shortcut for going back one level - directory level up
     QAction *action = new QAction( QIcon::fromTheme( QStringLiteral("go-up") ), i18n( "Go Up in Media Sources Pane" ),
                                   m_mainWidget );
     Amarok::actionCollection()->addAction( QStringLiteral("browser_previous"), action );
